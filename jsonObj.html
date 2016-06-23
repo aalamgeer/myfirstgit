@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css">
+<title>Angular js directives</title>
+</head>
+
+<body>
+<h1>Sample Applications</h1>
+
+<div ng-app="" ng-init= "countries =[{locale:'en-US',name:'United states'},{locale:'en-GB',name:'United Kingdom'},{locale:'en-FR',name:'France'}]">
+<p> Enter Your name <input type="text" ng-model="name" /></p>
+<p> Hello <h1 ng-bind ="name"></h1>!</p>
+<p> List of contries</p>
+
+<ol>
+<li ng-repeat="country in countries">
+{{'country: '+ country.name + ', Locale: ' + country.locale }}
+</li>
+</ol>
+</div>
+</body>
+</html>
