@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css">
+<title>Controller Ag</title>
+</head>
+
+<body>
+<div ng-app="mainApp" ng-controller="studentController">
+Enter First name <input type="text" ng-model="student.firstname" /><br /><br />
+Enter Last name <input type="text" ng-model="student.lastname" /><br />
+<br />
+You are entring: {{student.fullname()}}
+</div>
+
+<script>
+var mainApp = angular.module('mainApp',[]);
+
+mainApp.controller('studentController', function($scope){
+$scope.student = {
+  firstname:"Aalamgeer",
+  lastname: "Rana",
+  
+  fullname: function(){
+    var studentobj;
+	 studentobj = $scope.student;
+	 return studentobj.firstname + ' ' + studentobj.lastname;
+  }
+};
+});
+</script>
+</body>
+</html>

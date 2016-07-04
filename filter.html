@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<title>Filter in Angjs</title>
+</head>
+
+<body>
+<div ng-app="myapp" ng-controller="studentController">
+<p>Enter First Name <input type="text" ng-model="student.firstname" /></p>
+<p>Enter last Name  <input type="text" ng-model="student.lastname" /></p>
+<p>Full name {{student.fullname() | uppercase}}</p>
+<br />
+<p>Full name {{student.fullname() | lowercase}}</p>
+<br />
+<p ng-repeat= "subject in student.subjects | filter:subjectName"> {{subject.name + ' Marks:' + subject.marks}}</p>
+</div>
+
+<script>
+var myapp = angular.module("myapp",[]);
+myapp.controller('studentController', function($scope){
+$scope.student = {
+    firstname:"Aalam Geer",
+	lastname: "Rana",
+	
+  subjects:[
+	 {name:'physics', marks:70},
+	 {name:'chemistry', marks:60},
+	 {name:'Math', marks:80}
+	],
+	
+	fullname:function()
+	{
+	  var studentobject = $scope.student;
+	  return studentobject.firstname + ' ' + studentobject.lastname;
+	}
+
+ };
+});
+</script>
+</body>
+</html>

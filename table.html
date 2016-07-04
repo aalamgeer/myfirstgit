@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Table in Angular</title>
+</head>
+
+<body>
+<div ng-app="myapp" ng-controller="studentController">
+<table>
+<tr ng-repeat="x in names">
+   <td>{{x.Name}}</td>
+   <td>{{x.Country}}</td>
+</tr>
+</table>
+</div>
+
+<script>
+var app = angular.module('myapp',[]);
+app.controller('studentController', function($scope,$http){
+$http.get('http://www.w3schools.com/angular/customers.php').then(function(response){ 
+$scope.names = response.data.records;
+});
+});
+</script>
+</body>
+</html>

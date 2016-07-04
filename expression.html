@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css">
+<title>Expression</title>
+</head>
+
+<body>
+<div ng-app="" ng-init="quantity=3 ; cost=50; student = {name:'Aalamgeer',lastname:'Rana',roll:'108'}; marks=[25,51,47,45]">
+<p>Hello{{student.name + ' ' + student.lastname}} !</p><!--Using String-->
+<p>Expension on book{{quantity * cost}} !</p>  <!--Using Number-->
+<p>Roll no.{{student.roll}} !</p>              <!-- Using Object-->
+<p>Marks in Examination{{marks[3]}} !</p>      <!-- Using Array-->
+</div>
+</body>
+</html>
